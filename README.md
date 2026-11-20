@@ -28,3 +28,92 @@ Create and train your model.
 ### STEP 4: 
 
 Include the training loss, validation loss vs iteration plot.
+
+### STEP 5: 
+
+Test the model for your handwritten scanned images.
+
+
+### STEP 6: 
+
+Create and train your model.
+
+
+
+## PROGRAM:
+
+
+### Name: Aadhithya.V
+
+### Register Number: 212225040002
+
+```
+class CNNClassifier(nn.Module):
+    def __init__(self):
+        super(CNNClassifier, self).__init__()
+
+# Initialize model
+model = CNNClassifier()
+
+# Move model to GPU if available
+if torch.cuda.is_available():
+    device = torch.device("cuda")
+    model.to(device)
+
+# Print model summary
+print('Name: Ragul M ')
+print('Register Number: '212225240026')
+summary(model, input_size=(1, 28, 28))
+
+# Initialize the Model, Loss Function, and Optimizer
+model = CNNClassifier()
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+
+# Train the Model
+def train_model(model, train_loader, num_epochs=3):
+  print('Name: Bhavankumar P')
+  print('Register Number: 212225240026')
+  for epoch in range(num_epochs):
+      model.train()
+      running_loss = 0.0
+      for images, labels in train_loader:
+        optimizer.zero_grad()
+        outputs = model(images)
+        loss = criterion(outputs, labels)
+        loss.backward()
+        optimizer.step()
+        running_loss += loss.item()
+
+      print('Name:Ragul M ')
+      print('Register Number:212225240026 ')
+      print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {running_loss/len(train_loader):.4f}')
+
+
+# Train the model
+train_model(model, train_loader)
+
+
+```
+
+### OUTPUT
+
+## Training Loss per Epoch:
+
+
+## Confusion Matrix:
+
+<img width="941" height="766" alt="592237526-6f9c695c-addc-4831-be3e-1419a3a514b6" src="https://github.com/user-attachments/assets/fa902694-489f-4a3d-9345-f26cf7d5515a" />
+
+
+## Classification Report:
+
+<img width="640" height="435" alt="592237641-93b21d58-cbac-4145-9761-96d2c4982822" src="https://github.com/user-attachments/assets/b6f0d771-f37e-45c2-963e-09af2bc121ac" />
+
+
+### New Sample Data Prediction:
+
+<img width="482" height="527" alt="592200927-1c374947-d3cd-4465-b8e8-11621c0835db" src="https://github.com/user-attachments/assets/b839896e-8605-434e-8e6d-9e078311b9ad" />
+
+## RESULT
+The Convolutional Neural Network (CNN) model was successfully trained and achieved good classification performance on the given image dataset.
