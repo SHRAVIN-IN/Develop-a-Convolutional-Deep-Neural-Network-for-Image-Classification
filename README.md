@@ -1,4 +1,16 @@
 # Develop a Convolutional Deep Neural Network for Image Classification
+# Move model to GPU if available
+if torch.cuda.is_available():
+    device = torch.device("cuda")
+    model.to(device)
+
+# Print model summary
+print('Name: Ragul M ')
+print('Register Number: '212225240026')
+summary(model, input_size=(1, 28, 28))
+
+# Initialize the Model, Loss Function, and Optimizer
+model = CNNClassifier()
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
@@ -17,8 +29,8 @@ def train_model(model, train_loader, num_epochs=3):
         optimizer.step()
         running_loss += loss.item()
 
-      print('Name: JANA SHRAVIN ')
-      print('Register Number:212224243003 ')
+      print('Name:Ragul M ')
+      print('Register Number:212225240026 ')
       print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {running_loss/len(train_loader):.4f}')
 
 
