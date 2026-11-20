@@ -43,10 +43,9 @@ Create and train your model.
 ## PROGRAM:
 
 
-### Name: Aadhithya.V
+### Name: JANA SHRAVIN
 
-### Register Number: 212225040002
-
+### Register Number: 212224243003
 ```
 class CNNClassifier(nn.Module):
     def __init__(self):
